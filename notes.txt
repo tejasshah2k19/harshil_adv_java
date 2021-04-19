@@ -1,0 +1,29 @@
+servlet --- controller -- backend 
+view --- html 
+
+
+signup.html-->SignupController[request,response]-->view.html
+
+jsp --> java server pages | java servlet pages
+
+jsp --> view + java [ html + java ] 
+
+jsp -> directly htlm | ??->java 
+signup.jsp --> signupcontroller -->get  [setdataforjsp , jump to Display.jsp ]  
+
+1 scriptlet  <% %>   { used to write any java code } 
+2 declaration <%!  %> { used to declare variable }*
+3 expression  <%=  %> { used to print any variable } 
+
+JSP ---> it has 9 implicit objects
+
+
+
+-------------------------------------
+
+
+
+
+
+
+
