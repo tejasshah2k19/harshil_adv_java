@@ -20,14 +20,41 @@ public class SignupController extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String city = request.getParameter("city");
 		String hobbies[] = request.getParameterValues("hobby");
-		System.out.println(firstName);
-		System.out.println(email);
-		System.out.println(password);
-		System.out.println(gender);
-		System.out.println(city);
-		for (String h : hobbies) {
-			System.out.println(h);
+
+		boolean isError = false;
+		if (firstName == null || firstName.trim().length() == 0) {
+			isError = true;
+			request.setAttribute("firstNameError", "<font color='red'>Please Enter FirstName</font>");
+		} else {
+			request.setAttribute("firstNameValue", firstName);
 		}
+		if (email == null || email.trim().length() == 0) {
+			isError = true;
+			request.setAttribute("emailError", "<font color='red'>Please Enter Email</font>");
+		} else {
+			request.setAttribute("emailValue", email);
+		}
+
+		if (password == null || password.trim().length() == 0) {
+			isError = true;
+			request.setAttribute("passwordError", "Please Enter Password");
+		}
+
+		if (isError) {
+
+			RequestDispatcher rd = request.getRequestDispatcher("Signup.jsp");
+			rd.forward(request, response);
+
+		} else {
+
+			System.out.println(firstName);
+			System.out.println(email);
+			System.out.println(password);
+			System.out.println(gender);
+			System.out.println(city);
+			for (String h : hobbies) {
+				System.out.println(h);
+			}
 
 //		response.setContentType("text/html");
 //
@@ -47,18 +74,19 @@ public class SignupController extends HttpServlet {
 //		out.print("<img src='a.jpg'>");
 //		out.print("</body></html>");
 
-		//
-		// request , , ,
+			//
+			// request , , ,
 
-		// servlet ->data -->send -->jsp --> retrive
-		// servlet -->data -->send-->servlet -->
-		//
+			// servlet ->data -->send -->jsp --> retrive
+			// servlet -->data -->send-->servlet -->
+			//
 
-		request.setAttribute("firstName", firstName);
-		request.setAttribute("email", email);
-		request.setAttribute("pwd", password);
+			request.setAttribute("firstName", firstName);
+			request.setAttribute("email", email);
+			request.setAttribute("pwd", password);
 
-		RequestDispatcher rd = request.getRequestDispatcher("DisplaySignupData.jsp");
-		rd.forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("DisplaySignupData.jsp");
+			rd.forward(request, response);
+		}
 	}
 }
