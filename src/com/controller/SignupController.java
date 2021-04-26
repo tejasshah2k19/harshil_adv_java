@@ -11,9 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SignupController extends HttpServlet {
 
+	@Override
+	public void init() throws ServletException {
+		System.out.println("init from signup controller");
+	
+		// // 
+	}
+
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		System.out.println("service from signup controller");
 		String firstName = request.getParameter("firstName");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -38,6 +45,23 @@ public class SignupController extends HttpServlet {
 		if (password == null || password.trim().length() == 0) {
 			isError = true;
 			request.setAttribute("passwordError", "Please Enter Password");
+		}
+
+		if (gender == null) {
+			isError = true;
+			request.setAttribute("genderError", "Please Enter Gender");
+		} else {
+			request.setAttribute("genderValue", gender);
+
+		}
+
+		if (city.equals("-1")) {
+
+			isError = true;
+			request.setAttribute("cityError", "Please Select City");
+		} else {
+			request.setAttribute("cityValue", city);
+
 		}
 
 		if (isError) {
@@ -88,5 +112,11 @@ public class SignupController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("DisplaySignupData.jsp");
 			rd.forward(request, response);
 		}
+	}
+
+	@Override
+	public void destroy() {
+		System.out.println("destroy from signup controller");
+
 	}
 }

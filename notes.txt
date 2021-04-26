@@ -21,6 +21,94 @@ JSP ---> it has 9 implicit objects
 
 -------------------------------------
 
+to create servlet we used HttpServlet class 
+
+	Servlet - interface 
+	
+	GenericServlet - class 
+	
+	HttpServlet - class 
+			service  -- we are not suppose to override this method 
+					 -- *doGet *doPost doDelete doHead doTrace   
+			
+   jsp -> form [method-get] --> submit -> request -->server --> servlet --> doGet() 
+   jsp -> form [method-post] --> submit -> request -->server --> servlet --> doPost()
+   
+   service method will call with any http method  
+   
+-------------------------------------------
+interface A{
+	void add();
+	void sub();
+}
+abstract class Aimpl implements A{
+	public void add(){}
+}
+------------------
+marker interface 
+functional interface 
+------------------
+
+SERVLET LIFECYCLE 
+
+init() -- called once -- explicit allocation
+service() -- called every time 
+destroy()  -- called once 
+
+
+server -- first request --servlet ---
+
+search memory class load?? servlet class? No 
+
+1)load class 
+2)create instance [ thread ]
+3)init 
+4)service 
+
+second request 
+search memory class load?? servlet class? Yes 
+service() 
+
+500 request there is only 1 object to server  for those 500 request 
+
+if 500 request are submited to server then 1 object of servlet is created and 500 threads are created for service/work/process 
+
+CGI vs Servlet 
+
+500 request -> 500 object [ CGI ]  --> 
+
+create -- release 
+
+When you shutdown your server 
+
+5) destroy  -- [ object -- explicit init -- release ]  
+
+
+
+ 1) load class
+ 2) create instance 
+ 3) init()
+ 4) service()
+ 5) destroy 
+ 
+
+-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

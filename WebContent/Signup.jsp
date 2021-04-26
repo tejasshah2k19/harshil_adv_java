@@ -13,14 +13,18 @@
 		String passwordError = (String) request.getAttribute("passwordError");
 		String firstNameValue = (String) request.getAttribute("firstNameValue");
 		String emailValue = (String) request.getAttribute("emailValue");
+		String genderError = (String) request.getAttribute("genderError");
+		String genderValue = (String) request.getAttribute("genderValue");
+		String cityValue = (String) request.getAttribute("cityValue");
 	%>
 
 
-	<form action="SignupController">
-		FirstName: <input type="text" name="firstName" value="<%=firstNameValue!=null?firstNameValue:""%>"/>
+	<form action="SignupController" method="get">
+		FirstName: <input type="text" name="firstName"
+			value="<%=firstNameValue != null ? firstNameValue : ""%>" />
 		<%=firstNameError == null ? "" : firstNameError%>
 
-		<br> Email :<input type="text" name="email"/>
+		<br> Email :<input type="text" name="email" />
 		<%
 			if (emailError != null) {
 		%>
@@ -30,18 +34,34 @@
 		%>
 		<br> Password :<input type="password" name="password" />
 		<%=passwordError == null ? "" : passwordError%>
-		<br> Gender : Male:<input type="radio" name="gender" value="male" />
-		Female:<input type="radio" name="gender" value="female" /><br>
-		City : <select name="city">
-			<option value="ahmedabad">Ahmedabad</option>
+		<br> Gender : Male:<input type="radio" name="gender" value="male"
+			<%=genderValue != null && genderValue.equals("male") ? "checked" : ""%> />
+		Female:<input type="radio" name="gender" value="female"
+			<%=genderValue != null && genderValue.equals("female") ? "checked" : ""%> />
+
+
+
+
+
+		<%=genderError == null ? "" : genderError%>
+
+
+
+		<br> City : <select name="city">
+
+			<option value="-1">---Select City---</option>
+			<option value="ahmedabad"
+				<%=cityValue != null && cityValue.equals("ahmedabad") ? "selected" : ""%>>Ahmedabad</option>
 			<option value="baroda">Baroda</option>
 			<option value="surat">Surat</option>
 
-		</select> <br> Hobby : Facebook: <input type="checkbox" name="hobby"
-			value="fb"><br> Cricket: <input type="checkbox"
-			name="hobby" value="ckt"><br> FootBall : <input
-			type="checkbox" name="hobby" value="football"><br> <input
-			type="submit" value="Signup" />
+		</select> ${cityError} <br> 
+		
+		Hobby : Facebook: <input type="checkbox"
+			name="hobby" value="fb"><br> Cricket: <input
+			type="checkbox" name="hobby" value="ckt"><br> FootBall :
+		<input type="checkbox" name="hobby" value="football"><br>
+		<input type="submit" value="Signup" />
 	</form>
 
 </body>
