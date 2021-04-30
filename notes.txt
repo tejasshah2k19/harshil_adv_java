@@ -93,8 +93,18 @@ When you shutdown your server
  
 
 -------------------------------------------
+30-4-2021
+MVC 
+webapp-admin-royal
+
+courses
+students 
+
+students==assing==courses 
 
 
+Dao --> query 
+bean --> container 
 
 
 
