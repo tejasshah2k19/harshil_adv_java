@@ -1,11 +1,20 @@
 package com.bean;
 
+import com.dao.UserDao;
+
 public class UserBean {
 
 	private int userId;
 	private String firstName;
 	private String email;
 	private String password;
+
+	public UserBean() {
+		this.userId = UserDao.userCount++;
+
+	}
+	
+	
 
 	public int getUserId() {
 		return userId;

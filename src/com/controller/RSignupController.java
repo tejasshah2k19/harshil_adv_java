@@ -58,8 +58,8 @@ public class RSignupController extends HttpServlet {
 
 		} else {
 			// save user data into users array list
-			user.setUserId(UserDao.userCount++);
-			UserDao.users.add(user);
+			//user.setUserId(UserDao.userCounter++);
+ 			UserDao.users.add(user);
 
 			RequestDispatcher rd = request.getRequestDispatcher("RLogin.jsp");
 			rd.forward(request, response);

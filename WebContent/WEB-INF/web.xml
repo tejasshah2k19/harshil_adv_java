@@ -55,4 +55,34 @@
     <servlet-name>RLogoutController</servlet-name>
     <url-pattern>/RLogoutController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserController</display-name>
+    <servlet-name>DeleteUserController</servlet-name>
+    <servlet-class>com.controller.DeleteUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserController</servlet-name>
+    <url-pattern>/DeleteUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditUserController</display-name>
+    <servlet-name>EditUserController</servlet-name>
+    <servlet-class>com.controller.EditUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserController</servlet-name>
+    <url-pattern>/EditUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RUpateController</display-name>
+    <servlet-name>RUpateController</servlet-name>
+    <servlet-class>com.controller.RUpateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RUpateController</servlet-name>
+    <url-pattern>/RUpateController</url-pattern>
+  </servlet-mapping>
 </web-app>

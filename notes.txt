@@ -106,10 +106,31 @@ students==assing==courses
 Dao --> query 
 bean --> container 
 
+TASK:
+	Signup
+	Login
+	Logout
+	ListAllUsers 
+---------------------------------------
 
 
 
+add 1  more field for user , roleId 
+we have two role in app 1) user 2) admin 
+using roleId we can identify user role.
 
+when user login u need to check role of the user 
+if user is admin then redirect user to the admin dashboard.
+admin can delete and update user.
+
+if user is user then redirect user to his home page and display his name with 
+welcome message. 
+user can modify his own profile. he cant delete or update any user. 
+
+logout can jump to login page 
+
+
+---------------------------------------
 
 
 

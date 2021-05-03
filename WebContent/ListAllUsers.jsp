@@ -25,6 +25,7 @@
 			<th>FirstName</th>
 			<th>Email</th>
 			<th>Password</th>
+			<th>Action</th>
 		</tr>
 
 
@@ -32,11 +33,13 @@
 			for (UserBean user : users) {
 		%>
 		<tr>
-			<td><%=user.getUserId()%></td>
+			<td><%=user.getUserId()%></td>         
 			<td><%=user.getFirstName()%></td>
 			<td><%=user.getEmail()%></td>
 			<td><%=user.getPassword()%></td>
-
+			<td><a href="DeleteUserController?userId=<%=user.getUserId()%>">Delete</a>
+			|<a href="EditUserController?userId=<%=user.getUserId()%>">Edit</a>
+			</td>
 		</tr>
 		<%
 			}
