@@ -130,8 +130,13 @@ user can modify his own profile. he cant delete or update any user.
 logout can jump to login page 
 
 
----------------------------------------
+1) how admin and user role identify ?
+	when any one signup then default role is user. 
+	first admin will create by manually. and next admin can created using admin dashboard.  
+2) if user have user role then he/she never access any page of admin
 
+---------------------------------------
+7-5-2021 
 
 
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-Welcome , ${user.firstName}
+Welcome , ${cookie.firstName.value}
 <br>
 
 <a href="RLogoutController">Logout</a>

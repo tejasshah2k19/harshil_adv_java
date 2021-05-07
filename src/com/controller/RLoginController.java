@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,14 +25,21 @@ public class RLoginController extends HttpServlet {
 		RequestDispatcher rd = null;
 		if (user == null) {
 			request.setAttribute("error", "Invalid Credentials");
-			rd =request.getRequestDispatcher("RLogin.jsp");
-		}else {
-			request.setAttribute("user", user);
-			rd = request.getRequestDispatcher("RHome.jsp");
-		
+			rd = request.getRequestDispatcher("RLogin.jsp");
+			rd.forward(request, response);
+
+		} else {
+			// cookie
+			Cookie userId = new Cookie("userId", user.getUserId() + "");
+			Cookie userName = new Cookie("firstName", user.getFirstName());
+
+			response.addCookie(userId); // this will add cookie in browser
+			response.addCookie(userName);
+
+			// role
+			response.sendRedirect("RHome.jsp");
 		}
-		
-		rd.forward(request, response);
+
 	}
 
 }
