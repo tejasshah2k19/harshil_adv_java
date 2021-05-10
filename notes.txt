@@ -36,7 +36,29 @@ to create servlet we used HttpServlet class
    
    service method will call with any http method  
    
+    as per tomcat's specification its advisable that we are not allow to override service method 
+  	why?
+  	service method is override by tomcat it self 
+  	-> http method get --> doGet 
+  	-> http method post --> doPost 
+  	
+  	
+  	if you have data which is concern with user's security / privacy  -- then u need to use  http post method [ from -- post ] 
+  	
+  	
+  	HTTP :- 
+  		REST 
+  		
+  	GET		user/:id	READ/single   
+  	POST	user		INSERT 
+  	PUT		user		UPDATE 
+  	DELETE	user 		DELETE 
+  	GET		user		READ / all records 
+	GET		users  		READ / all records 
+		
 -------------------------------------------
+
+
 interface A{
 	void add();
 	void sub();
@@ -138,7 +160,8 @@ logout can jump to login page
 ---------------------------------------
 7-5-2021 
 
-
+	cookie  --  -- browser 
+	session -- privacy | security --server  
 
 
 

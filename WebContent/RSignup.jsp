@@ -10,7 +10,7 @@
 <body>
 
 
-	<form action="RSignupController" method="get">
+	<form action="RSignupController" method="post">
 		FirstName: <input type="text" name="firstName"
 			value="${user.firstName}" /> ${firstNameError} <br> Email :<input
 			type="text" name="email" value="${user.email}" /> ${emailError } <br> Password :<input
