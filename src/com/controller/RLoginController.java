@@ -16,6 +16,12 @@ public class RLoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		doGet(request, response);
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
@@ -33,6 +39,8 @@ public class RLoginController extends HttpServlet {
 			Cookie userId = new Cookie("userId", user.getUserId() + "");
 			Cookie userName = new Cookie("firstName", user.getFirstName());
 
+			userId.setMaxAge(60 * 60 * 24 * 3);// seconds
+			userName.setMaxAge(60 * 60 * 24 * 5);// seconds
 			response.addCookie(userId); // this will add cookie in browser
 			response.addCookie(userName);
 
@@ -41,5 +49,4 @@ public class RLoginController extends HttpServlet {
 		}
 
 	}
-
 }
