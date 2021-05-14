@@ -8,11 +8,12 @@
 </head>
 <body>
 
- 
 
-Welcome , ${cookie.firstName.value}
-<br>
 
-<a href="RLogoutController">Logout</a>
+	Welcome From Cookie==>  , ${cookie.firstName.value}
+	<br>
+	Welcome From Session =>,${sessionScope.user.firstName }
+
+	<a href="RLogoutController">Logout</a>
 </body>
 </html>

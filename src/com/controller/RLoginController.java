@@ -8,6 +8,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bean.UserBean;
 import com.dao.UserDao;
@@ -38,6 +39,13 @@ public class RLoginController extends HttpServlet {
 			// cookie
 			Cookie userId = new Cookie("userId", user.getUserId() + "");
 			Cookie userName = new Cookie("firstName", user.getFirstName());
+
+			//
+			HttpSession session = request.getSession();
+
+			session.setMaxInactiveInterval(60 * 2);//
+
+			session.setAttribute("user", user);
 
 			userId.setMaxAge(60 * 60 * 24 * 3);// seconds
 			userName.setMaxAge(60 * 60 * 24 * 5);// seconds
