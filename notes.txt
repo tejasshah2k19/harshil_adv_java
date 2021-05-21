@@ -164,8 +164,42 @@ logout can jump to login page
 	session -- privacy | security --server  
 
 
+------------------------------------
+17-5-2021
+
+login.jsp -> email | password --> submit ---> server ---> servlet 
+signup.jsp -> email | password  |  firstname --> submit ---> server ---> servlet 
+
+1) fetch all data from request 
+2) validation 
+3) process/ database insert / read / update / delete  / process 
+4) response 
+
+Filter --> pre-process your request --> 
+
+wp -> image send [ x-> 15mb  | compress image | 5mb ->   -upload 5mb wpserver[compress] --> download 5mb --> y ]  
+fb -> 
 
 
+icici bank --> india , usa, uk , green 
+								 grey 
+								 black pakistan
+
+
+login --> info -->  filter ||server
+singup.jsp --> data | profile pic     | filter [ validation -required | length | reg exp ] 
+										filter [profile jpg png + 5mb ] 
+										servlet 
+										
+										
+How to add filter in project? 
+
+1) create filter class which implements Filter interface 
+2) init ,doFilter,destroy 
+3) map your filter in web.xml [ when my filter is call? ] 
+	
+										
+										 
 
 
 
