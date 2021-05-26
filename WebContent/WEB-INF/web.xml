@@ -96,9 +96,8 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>FilterSignupController</servlet-name>
-		<url-pattern>/FilterSignupController</url-pattern>
+		<url-pattern>/signup</url-pattern>
 	</servlet-mapping>
-
 
 	<filter>
 		<filter-name>SignupFilter</filter-name>
@@ -109,6 +108,25 @@
 		<filter-name>SignupFilter</filter-name>
 		<servlet-name>FilterSignupController</servlet-name>
 	</filter-mapping>
+
+
+	<filter>
+		<filter-name>DuplicateEmailFilter</filter-name>
+		<filter-class>com.filter.DuplicateEmailFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>DuplicateEmailFilter</filter-name>
+		<servlet-name>FilterSignupController</servlet-name>
+	</filter-mapping>
+
+	<session-config>
+		 <session-timeout>5</session-timeout>
+	</session-config>
+
+	<listener>
+		<listener-class>com.listener.SessionListenerUserCounter</listener-class>
+	</listener>
 
 
 </web-app>

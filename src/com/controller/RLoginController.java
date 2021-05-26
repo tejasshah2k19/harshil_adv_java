@@ -37,14 +37,12 @@ public class RLoginController extends HttpServlet {
 
 		} else {
 			// cookie
-			Cookie userId = new Cookie("userId", user.getUserId() + "");
+			Cookie userId = new Cookie("userId", user.getUserId() + "");//string only
 			Cookie userName = new Cookie("firstName", user.getFirstName());
 
 			//
 			HttpSession session = request.getSession();
-
 			session.setMaxInactiveInterval(60 * 2);//
-
 			session.setAttribute("user", user);
 
 			userId.setMaxAge(60 * 60 * 24 * 3);// seconds
@@ -53,7 +51,10 @@ public class RLoginController extends HttpServlet {
 			response.addCookie(userName);
 
 			// role
-			response.sendRedirect("RHome.jsp");
+			String url = "RHome.jsp";
+			url = response.encodeURL(url); // RHome.jsp;JSESSIONID=45jlk5kjl6
+			
+			response.sendRedirect(url);
 		}
 
 	}

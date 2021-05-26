@@ -17,13 +17,13 @@ public class RLogoutController extends HttpServlet {
 		// below line will not carry forward current request object
 		// it will create new request object
 
-		Cookie c[] = request.getCookies();
-
-		for (Cookie ck : c) {
-			ck.setMaxAge(0);
-			response.addCookie(ck);
-		}
-
+//		Cookie c[] = request.getCookies();
+//
+//		for (Cookie ck : c) {
+//			ck.setMaxAge(0);
+//			response.addCookie(ck);
+//		}
+//
 		HttpSession session = request.getSession();
 		session.invalidate();// destroy current request session
 

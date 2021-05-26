@@ -8,12 +8,22 @@
 </head>
 <body>
 
-
+		<%
+			if(session.getAttribute("user") == null){
+				response.sendRedirect("RLogin.jsp");
+			}
+		%>
 
 	Welcome From Cookie==>  , ${cookie.firstName.value}
 	<br>
 	Welcome From Session =>,${sessionScope.user.firstName }
 
-	<a href="RLogoutController">Logout</a>
+	
+	<%
+		String url = "RLogoutController";
+		url = response.encodeURL(url);	
+	
+	%>
+	<a href="<%=url%>">Logout</a>
 </body>
 </html>

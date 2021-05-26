@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	<form action="FilterSignupController" method="post">
+	<form action="signup" method="post">
 		FirstName: <input type="text" name="firstName" /> ${firstNameError }
 		<br> Email :<input type="text" name="email" /> ${emailError } <br>
 		Password :<input type="password" name="password" /> ${passwordError }

@@ -199,10 +199,131 @@ How to add filter in project?
 3) map your filter in web.xml [ when my filter is call? ] 
 	
 										
-										 
+--------------------------------------------------
+
+
+21-5-2021
+
+How to set multiple filters? 
+
+Signup.jsp --> SignupValidationFilter --> SignupController 
+
+
+Signup.jsp --> SignupValidationFilter --> DuplicateEmailFilter -->  SignupController 
+ 
+--------------------------------------------------
+24-5-2021
+
+user -> info 
+
+1) cookie - client -- browser  --- easy to access by any user 
+2) session -server -- server memory --- secured 
 
 
 
+login -logout ? no 
+session :-  
+	client -> 1 request ->  server --> hidden --> cookie -> JSESSIONID
+						server --> search for session using JSESSIONID ==> memory  
+
+			if not found 
+				create session and in response add JSESSIONID in client's browser
+				if you ask - server will create a new and then gives you 
+			else
+				if you ask for session server will provide that 
+					
+				
+		
+		How to access session ? 
+				HttpSession session = request.getSession();	//new existting
+				
+				session.setAttribute("String",Object); 		
+				
+				
+				session.setAttribute("user",user); 		
+				UserBean user = (UserBean)session.getAttribute("user");
+								
+				
+		Destroy session :-
+							
+				session.invalidate(); 
+				
+				
+				
+login.jsp -> request --> server -->check for session [ JSESSIONID ] -->
+			no --> server session create and store jsessionid [ 123 ]  in cookie 
+			
+home.jsp
+	logout --> session destroy  [ 123 ] 
+
+login.jsp --> request --> server --> check for session [ Jsessionid 123 ]  
+				server check 123 --> no [ not present ] -
+					create new and add into cookie [ 345 ] 
+
+
+harshil
+login.jsp --> 123 sessionid   --> memory    123 :  [ user:[fn,em,pass]     ]
+home.jsp -->  [123] sessionScope.user.firstName 
+
+
+sahdev 
+login.jsp --> 456 sessionid   --> memory    456 :  [ user:[fn,em,pass]     ]
+home.jsp -->  [456] sessionScope.user.firstName 
+
+
+diya
+login.jsp --> 789 sessionid   --> memory    789:  [ user:[fn,em,pass]     ]
+home.jsp -->  [789] sessionScope.user.firstName 
+
+
+
+
+
+how to prevent creation of session  in any jsp ?  Login.jsp 
+
+
+---------------------------------------------------------------
+26-5-2021
+
+1) setMaxInactiveInterval vs session-config in web.xml
+2) what is user disable cookies? how to track session?
+		using url rewriting 
+	
+	
+Listener:-
+	HttpSessionListener
+		UserCounter 
+---------------------------------------------------------------
+		
+
+
+
+
+
+
+
+				
+				
+				
+				
+				
+				
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
