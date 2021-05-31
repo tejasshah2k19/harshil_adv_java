@@ -294,7 +294,11 @@ Listener:-
 	HttpSessionListener
 		UserCounter 
 ---------------------------------------------------------------
-		
+RequestHeaders 
+
+client --> request --> server 
+	hidden data ==> server [ request Header ] 
+			
 
 
 

@@ -10,12 +10,14 @@
 <body>
 
 
-	<form action="RSignupController" method="post">
+	<form action="RSignupController" name="reg" method="post">
 		FirstName: <input type="text" name="firstName"
 			value="${user.firstName}" /> ${firstNameError} <br> Email :<input
 			type="text" name="email" value="${user.email}" /> ${emailError } <br> Password :<input
 			type="password" name="password" /> ${passwordError } <br> <input
 			type="submit" value="Signup" />
+			<input type="reset" value="clear"/>
+   
 	</form>
 	<br>
 	<br>
