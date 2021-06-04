@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" session="false" buffer="8kb" autoFlush="true"
+	import="java.util.Scanner,java.sql.Date" import="java.applet.Applet"%>
+<%@ page import="java.io.File"   %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +10,8 @@
 </head>
 <body>
 	<%
+		Scanner scr = null;
+		Date d = null;
 		String firstNameError = (String) request.getAttribute("firstNameError");
 		String emailError = (String) request.getAttribute("emailError");
 		String passwordError = (String) request.getAttribute("passwordError");
@@ -55,9 +59,7 @@
 			<option value="baroda">Baroda</option>
 			<option value="surat">Surat</option>
 
-		</select> ${cityError} <br> 
-		
-		Hobby : Facebook: <input type="checkbox"
+		</select> ${cityError} <br> Hobby : Facebook: <input type="checkbox"
 			name="hobby" value="fb"><br> Cricket: <input
 			type="checkbox" name="hobby" value="ckt"><br> FootBall :
 		<input type="checkbox" name="hobby" value="football"><br>

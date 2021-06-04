@@ -179,4 +179,17 @@
     <servlet-name>PrintAllCookiesController</servlet-name>
     <url-pattern>/PrintAllCookiesController</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/E404.jsp</location>
+  </error-page>
+  
+  
+  
+  
+  
 </web-app>

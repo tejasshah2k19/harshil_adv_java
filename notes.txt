@@ -298,6 +298,53 @@ RequestHeaders
 
 client --> request --> server 
 	hidden data ==> server [ request Header ] 
+---------------------------------------------------------------
+
+scriptlet 
+expression
+declaration 
+
+<%  %>  -> java code --> service()
+<%= %>  -> print 
+<%!   %> -> instance level -> class --> variable declaration / method 
+
+
+A.jsp 
+
+	hi
+	<% int k =90; %>
+	<%! int t = 90 %>
+	<%=t%>
+	<%! void add(){} %>
+	
+class A {
+	
+	int t = 90; 
+     
+     void add(){}
+     
+	_jspService(){
+		
+		out.print("hi");
+		int k = 90 ;
+		out.print(t);
+	}
+
+} 
+
+	output :-	
+
+
+
+
+
+
+
+
+
+
+
+
 			
 
 
