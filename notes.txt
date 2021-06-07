@@ -335,10 +335,86 @@ class A {
 	output :-	
 
 
+------------------------------------
+
+what is header and footer in website? ? ? 
+
+header and footer display in almost all the pages with same content. 
+
+home.jsp , faq.jsp , viewcart.jsp 2
+
+header logo and name , footer -> contact num and email
+
+----Do not repeat your code ----
+
+Reusable web component-> [ inclusion ]  
+	RUHeader.jsp [ logo name ] 
+	RUFooter.jsp [ contacts ] 
+
+1) static inclusion 
+	<%@include file="RUHeader.jsp" %> 
+	 
+2) dynamic inclusion 
+	<jsp:include page="RUFooter.jsp" />
 
 
 
+RUHome.jsp
 
+  <%@include file="RUHeader.jsp" %>
+  
+  <h3>Welcome </h3>
+  
+Tranlation Time: -  RUHome.jsp
+ 
+  <h2> ROYALTECHNO </h2>
+  
+  
+ <h3>Welcome </h3>
+  
+ all linse are copied form RUHeader.jsp to RUHome.jsp 
+ so if our RUHeader.jsp is 5 kb of line of code and 
+ RUHome.jsp is 7kb of line of code ,if we include RUHeader in RUHomoe then
+ RuHome will increase the size as all lines are copied into RUHome.jsp 
+ so final size of RuHome.jsp will 12kb. 
+ 
+ 
+Dynamic Inclusion:-- 
+	in dynamic inclusion source jsp will not copy into inclusion jsp. 
+	it will redirect you to source jsp and merge output of source jsp in included jsp. 
+	so RUHome will not copy content of RUFooter.jsp.
+	
+	RUHome.jsp
+	
+	<h3>Welcome Home</h3>
+	
+	
+	<jsp:include page="RUFooter.jsp" /> 
+	
+Translation time - RUHome.jsp
+
+
+<h3> Weclome Home </h3> 
+
+
+redirect to RUFooter.jsp and append output 
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+  
+  
+	    
 
 
 
