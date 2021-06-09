@@ -179,17 +179,18 @@
     <servlet-name>PrintAllCookiesController</servlet-name>
     <url-pattern>/PrintAllCookiesController</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <error-page>
-  	<error-code>404</error-code>
-  	<location>/E404.jsp</location>
+    <error-code>404</error-code>
+    <location>/E404.jsp</location>
   </error-page>
-  
-  
-  
-  
-  
+  <servlet>
+    <description></description>
+    <display-name>DbSignupServlet</display-name>
+    <servlet-name>DbSignupServlet</servlet-name>
+    <servlet-class>com.controller.DbSignupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DbSignupServlet</servlet-name>
+    <url-pattern>/DbSignupServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -16,5 +16,19 @@ Something went wrong...
 
 <br><br>
 <%=exception.getMessage() %>
+
+<br><br>
+<hr>
+
+<%=exception.getClass() %>
+<%if(exception.getClass().toString().equals("class java.lang.NumberFormatException")){ %>
+
+<h2>Please Enter Only Integers</h2>
+<%}else if(exception.getClass().toString().equals("class java.lang.ArithmeticException")){ %>
+	<h2>Please Do not enter zero in second number</h2>
+<%} %>
+
+
+
 </body>
 </html>
