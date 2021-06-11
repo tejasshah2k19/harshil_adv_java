@@ -25,9 +25,17 @@ public class DbSignupServlet extends HttpServlet {
 
 		// insert
 		StudentDao studentDao = new StudentDao();
-		studentDao.insertStudent(student);
-//		studentDao.insertStudent(firstName,email,password);//15 
+		int records = studentDao.insertStudent(student);
 
+		if(records == 0) {
+			//something went wrong 
+			//error set 
+			//dispay jsp 
+		}else {
+			response.sendRedirect("DbListStudentController");
+		}
+
+		
 	}
 
 }

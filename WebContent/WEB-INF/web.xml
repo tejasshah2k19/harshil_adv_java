@@ -193,4 +193,24 @@
     <servlet-name>DbSignupServlet</servlet-name>
     <url-pattern>/DbSignupServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DbListStudentController</display-name>
+    <servlet-name>DbListStudentController</servlet-name>
+    <servlet-class>com.controller.DbListStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DbListStudentController</servlet-name>
+    <url-pattern>/DbListStudentController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DbDeleteStudentController</display-name>
+    <servlet-name>DbDeleteStudentController</servlet-name>
+    <servlet-class>com.controller.DbDeleteStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DbDeleteStudentController</servlet-name>
+    <url-pattern>/DbDeleteStudentController</url-pattern>
+  </servlet-mapping>
 </web-app>
