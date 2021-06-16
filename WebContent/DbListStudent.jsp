@@ -1,3 +1,4 @@
+
 <%@page import="com.bean.StudentBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html; charset=ISO-8859-1" language="java"
@@ -37,7 +38,7 @@
 							<td><%=sb.getFirstName()%></td>
 							<td><%=sb.getEmail()%></td>
 							<td><%=sb.getPassword()%></td>
-							<td><a href="#"> Edit </a> |<a href="DbDeleteStudentController?studentId=<%=sb.getStudentId()%>"> Delete </a></td>
+							<td><a href="DbEditStudentController?studentId=<%=sb.getStudentId()%>"> Edit </a> |<a href="DbDeleteStudentController?studentId=<%=sb.getStudentId()%>"> Delete </a></td>
 						</tr>
 						<%
 							}

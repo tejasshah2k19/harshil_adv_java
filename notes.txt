@@ -399,7 +399,17 @@ Translation time - RUHome.jsp
 
 redirect to RUFooter.jsp and append output 
 
+==================
 
+EL - expression language 
+	EL is used to simplify the accessibility of the data which is stored in bean or any scope { page,request,session,application}. 
+	EL - attributes , implicit variables => implicit objects 
+	
+	jsp 2.0 
+	
+	
+	
+	 
 	
 	
 	

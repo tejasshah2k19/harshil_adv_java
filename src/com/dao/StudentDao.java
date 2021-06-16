@@ -51,7 +51,7 @@ public class StudentDao {
 				sb.setPassword(rs.getString("password"));
 				sb.setFirstName(rs.getString("firstName"));
 				students.add(sb);
-			
+
 			}
 
 		} catch (Exception e) {
@@ -59,6 +59,61 @@ public class StudentDao {
 		}
 
 		return students;
+	}
+
+	public void deleteStudentById(int studentId) {
+
+		try (Connection con = DbConnection.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("delete from student where studentId = ?");) {
+			pstmt.setInt(1, studentId);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public StudentBean getDataById(int studentId) {
+		StudentBean sb = new StudentBean();
+		try (Connection con = DbConnection.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("select * from student where studentId =  ?");) {
+			pstmt.setInt(1, studentId);
+
+			ResultSet rs = pstmt.executeQuery();// student --cursor
+
+			if (rs.next()) { // true
+				// jump to 1st record
+
+				sb.setStudentId(rs.getInt("studentId"));
+				sb.setEmail(rs.getString("email"));
+				// sb.setPassword(rs.getString("password"));
+				sb.setFirstName(rs.getString("firstName"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return sb;
+
+	}
+
+	public int updateStudent(StudentBean student) {
+		int records = 0;
+		try (Connection con = DbConnection.getConnection();
+				PreparedStatement pstmt = con
+						.prepareStatement("update student set firstName = ? , email = ? where studentId = ?");) {
+
+			pstmt.setString(1, student.getFirstName());
+			pstmt.setString(2, student.getEmail());
+			pstmt.setInt(3, student.getStudentId());
+
+			records = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return records;
 	}
 
 }
