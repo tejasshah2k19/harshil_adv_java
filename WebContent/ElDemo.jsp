@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<%@taglib uri="myelfunction"  prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,8 +14,6 @@
 	session.setAttribute("msg","basanti1");
 	application.setAttribute("msg","samba");
 
-	
-	
 	
 %> 
 msg: ${sessionScope.msg}<br>
@@ -33,6 +33,9 @@ userName : <%=config.getInitParameter("userName") %>
 
 </pre>
 
+<br><br>
+	${s:greet() }
 
+<Br><BR>
 </body>
 </html>
