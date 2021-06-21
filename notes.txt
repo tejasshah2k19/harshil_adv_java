@@ -406,9 +406,30 @@ EL - expression language
 	EL - attributes , implicit variables => implicit objects 
 	
 	jsp 2.0 
-	
-	
-	
+
+El Function
+1) create class file with method for logic 
+2) map this class into tld file which we will create inside WEB-INF
+3) map tld file into web.xml
+4) use function in jsp using taglib directive  	
+-------------------------------------------------
+
+JSTL - java standard tag lib. 
+
+1 core*** 
+2 format 
+3 sql 
+4 xml 
+5 function 
+ 
+ 
+steps:
+1) download jstljar 
+2) in jsp use tab using  taglib  
+ 
+ 
+
+
 	 
 	
 	

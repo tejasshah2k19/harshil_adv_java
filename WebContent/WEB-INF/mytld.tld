@@ -9,4 +9,19 @@
 		<function-signature>java.lang.String greet()</function-signature>
 	</function>
 
+
+	<function>
+		<name>sqr</name>
+		<function-class>com.elfunction.SquareFunction</function-class>
+		<function-signature>java.lang.Integer sqr(java.lang.Integer)
+		</function-signature>
+	</function>
+
+	<function>
+		<name>cube</name>
+		<function-class>com.elfunction.SquareFunction</function-class>
+		<function-signature>java.lang.Integer cube(java.lang.Integer)
+		</function-signature>
+	</function>
+
 </taglib>
