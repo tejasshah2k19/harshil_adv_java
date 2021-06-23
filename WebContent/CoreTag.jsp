@@ -10,5 +10,56 @@
 </head>
 <body>
 
+	<c:set var="a" value="10" scope="session"></c:set>
+
+	<br>
+	<c:out value="${a}" />
+
+	<c:remove var="a" />
+
+
+	<br> after Remove
+	<br>
+
+	<c:out value="${a}" />
+
+
+	<c:catch var="e">
+		<%
+			int a = 20 / 0;
+				out.print(a);
+		%>
+
+
+	</c:catch>
+
+	<c:if test="${e!=null }">
+		Divide by Zero
+	</c:if>
+
+
+
+
+	<c:set var="choice" value="2" />
+<br>
+	<c:choose>
+		<c:when test="${choice == 1 }">
+		you selected 1
+	</c:when>
+
+		<c:when test="${choice == 2 }">
+		you selected 2
+	</c:when>
+
+		<c:otherwise>
+		invalid choice
+	</c:otherwise>
+
+	</c:choose>
+
+
 </body>
+
+
+
 </html>
