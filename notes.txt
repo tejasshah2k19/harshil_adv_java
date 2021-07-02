@@ -428,6 +428,44 @@ steps:
 2) in jsp use tab using  taglib  
  
  
+--------------------------------------------------------------------------------------
+
+
+ten-2 month
+	complaint 
+	
+owner [2 days ] 
+
+
+admin [ ] 
+
+
+practo
+mfine 
+
+
+
+usa/canda/
+
+
+usa
+age 
+bach
+certificates
+ielts [ band ]
+research
+ngo
+
+universities 
+1) x 
+	 [  ] [ ] 	
+2) req => y 
+
+3) z 
+ 
+--------------------------------------------------------------------------------------
+
+
 
 
 	 

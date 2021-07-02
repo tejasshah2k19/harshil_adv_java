@@ -261,4 +261,14 @@
     <servlet-name>SaveBeanToUserController</servlet-name>
     <url-pattern>/SaveBeanToUserController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ElListUsersController</display-name>
+    <servlet-name>ElListUsersController</servlet-name>
+    <servlet-class>com.controller.ElListUsersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ElListUsersController</servlet-name>
+    <url-pattern>/ElListUsersController</url-pattern>
+  </servlet-mapping>
 </web-app>
