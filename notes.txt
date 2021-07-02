@@ -466,7 +466,42 @@ universities
 --------------------------------------------------------------------------------------
 
 
+custom tag 
 
+	user define tag 
+	
+	
+	1) simple tag  - SimpleTag 
+	2) classic tag 
+	
+	
+	SimpleTag 
+	
+	
+	<greet></greet>
+	
+	Good Morning , Tejas 
+	Good evening , Tejas 
+	
+0) jsp-api.jar 
+	
+1) tag handler class 
+2) .tld -- tag lib descriptor 
+3) map your tld in web.xml 
+4) use in jsp using @taglib
+	
+	
+TasK:
+
+<s:currency type="usd" amount="7500"> 
+100$ 
+
+<s:currency type="aud" amount="4500"> 
+450AUD 
+ 	
+	
+	
+	
 
 	 
 	

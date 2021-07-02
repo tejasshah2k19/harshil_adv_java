@@ -250,6 +250,11 @@
       <taglib-uri>myelfunction</taglib-uri>
       <taglib-location>/WEB-INF/mytld.tld</taglib-location>
     </taglib>
+    
+    <taglib>
+    	<taglib-uri>stag</taglib-uri>
+    	<taglib-location>/WEB-INF/stag.tld</taglib-location>
+    </taglib>
   </jsp-config>
   <servlet>
     <description></description>
