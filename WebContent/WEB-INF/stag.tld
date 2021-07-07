@@ -42,4 +42,24 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
+	
+	
+	<tag>
+		<name>sum</name>
+		<tag-class>com.stag.SumTag</tag-class>
+		<body-content>empty</body-content>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </taglib>
